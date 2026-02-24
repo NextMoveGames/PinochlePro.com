@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// TODO: Replace with real RevenueCat Web Purchase Links once RC Web Billing is configured (#120)
+const WEB_PURCHASE_LINKS = {
+  monthly: '#subscribe-monthly',
+  annual: '#subscribe-annual',
+  lifetime: '#subscribe-lifetime',
+};
+---
+<BaseLayout
+  title="Pricing — Pinochle Pro"
+  description="Free to play with all rules. Subscribe for ad-free play, AI personalities, card themes, and more. One subscription covers both 4-hand and 3-hand."
+  canonical="/pricing"
+>
+  <h1 class="title">Simple, Honest Pricing</h1>
+  <p style="text-align:center; color:#555; margin-bottom: 8px;">
+    The full game is always free. Subscribers get ad-free play, customization, and exclusive features.<br />
+    <strong>One subscription covers both 4-hand and 3-hand Pinochle Pro.</strong>
+  </p>
+
+  <div class="pricing-grid">
+
+    <!-- Free -->
+    <div class="pricing-card">
+      <h3>Free</h3>
+      <div class="pricing-price">$0</div>
+      <div class="pricing-period">forever</div>
+      <ul class="pricing-features">
+        <li>Complete 4-hand &amp; 3-hand game</li>
+        <li>All rule options</li>
+        <li>Advanced AI opponents</li>
+        <li>Bob, Shirley &amp; Jed characters</li>
+        <li>Game statistics</li>
+        <li class="excluded">Ads shown</li>
+        <li class="excluded">Card themes &amp; backs</li>
+        <li class="excluded">AI personalities</li>
+        <li class="excluded">Hints system</li>
+        <li class="excluded">Post-hand analysis</li>
+      </ul>
+      <a href="https://apps.apple.com/us/app/pinochle-pro/id567644839" target="_blank" rel="noopener" class="pricing-cta secondary">Download Free →</a>
+    </div>
+
+    <!-- Annual — featured -->
+    <div class="pricing-card featured">
+      <h3>Annual</h3>
+      <div class="pricing-price">$9.99</div>
+      <div class="pricing-period">per year · ~83¢/month</div>
+      <ul class="pricing-features">
+        <li>Everything in Free</li>
+        <li>Ad-free play</li>
+        <li>Card themes &amp; backs</li>
+        <li>AI personalities</li>
+        <li>Hints system</li>
+        <li>Post-hand analysis</li>
+        <li>Statistics dashboard</li>
+        <li>Web play (coming soon)</li>
+        <li>Both app variants covered</li>
+      </ul>
+      <a href={WEB_PURCHASE_LINKS.annual} class="pricing-cta" onclick="gtag && gtag('event', 'subscribe_cta_click', {plan: 'annual'})">Subscribe Annual →</a>
+      <p class="comparison-note">Save ~58% vs monthly</p>
+    </div>
+
+    <!-- Monthly -->
+    <div class="pricing-card">
+      <h3>Monthly</h3>
+      <div class="pricing-price">$1.99</div>
+      <div class="pricing-period">per month</div>
+      <ul class="pricing-features">
+        <li>Everything in Free</li>
+        <li>Ad-free play</li>
+        <li>Card themes &amp; backs</li>
+        <li>AI personalities</li>
+        <li>Hints system</li>
+        <li>Post-hand analysis</li>
+        <li>Statistics dashboard</li>
+        <li>Web play (coming soon)</li>
+        <li>Both app variants covered</li>
+      </ul>
+      <a href={WEB_PURCHASE_LINKS.monthly} class="pricing-cta secondary" onclick="gtag && gtag('event', 'subscribe_cta_click', {plan: 'monthly'})">Subscribe Monthly →</a>
+    </div>
+
+    <!-- Lifetime -->
+    <div class="pricing-card">
+      <h3>Lifetime</h3>
+      <div class="pricing-price">$29.99</div>
+      <div class="pricing-period">one-time · own forever</div>
+      <ul class="pricing-features">
+        <li>Everything in Subscriber</li>
+        <li>Pay once, never again</li>
+        <li>All future subscriber features</li>
+        <li>Both app variants covered</li>
+      </ul>
+      <a href={WEB_PURCHASE_LINKS.lifetime} class="pricing-cta secondary" onclick="gtag && gtag('event', 'subscribe_cta_click', {plan: 'lifetime'})">Buy Lifetime →</a>
+      <p class="comparison-note">Equivalent to ~3 years annual</p>
+    </div>
+
+  </div>
+
+  <div class="section">
+    <h2>Frequently Asked Questions</h2>
+
+    <details style="margin-bottom:16px;">
+      <summary style="cursor:pointer; font-weight:bold;">Does one subscription cover both 4-hand and 3-hand?</summary>
+      <p style="padding: 12px 0 0;">Yes. One Pinochle Pro subscription covers both PinochlePro (4-hand) and PinochlePro 3-Hand. You'll never need to pay twice for the same game.</p>
+    </details>
+
+    <details style="margin-bottom:16px;">
+      <summary style="cursor:pointer; font-weight:bold;">I already bought the ad-free version. What happens to me?</summary>
+      <p style="padding: 12px 0 0;">You keep your ad-free access permanently — that purchase is honored forever. New subscriber features (card themes, AI personalities, hints, etc.) require a subscription, but you'll never lose what you already paid for.</p>
+    </details>
+
+    <details style="margin-bottom:16px;">
+      <summary style="cursor:pointer; font-weight:bold;">Can I subscribe on the website and use it on my iPhone?</summary>
+      <p style="padding: 12px 0 0;">Yes. After subscribing on the web, you'll receive a Redemption Link — just tap it on your iPhone to activate your subscription in the app.</p>
+    </details>
+
+    <details style="margin-bottom:16px;">
+      <summary style="cursor:pointer; font-weight:bold;">How do I manage or cancel my subscription?</summary>
+      <p style="padding: 12px 0 0;">Web subscribers can manage through the <a href="https://billing.revenuecat.com/portal" target="_blank" rel="noopener">subscription portal</a>. iOS subscribers can manage through <strong>Settings → Apple ID → Subscriptions</strong>.</p>
+    </details>
+
+    <details>
+      <summary style="cursor:pointer; font-weight:bold;">What is the Lifetime option?</summary>
+      <p style="padding: 12px 0 0;">A one-time purchase that grants all subscriber features forever — including all future subscriber features we add. No recurring charge, ever. Great for players who prefer to own rather than subscribe.</p>
+    </details>
+  </div>
+
+  <p style="text-align:center; margin-top:32px; color:#888; font-size:0.9rem;">
+    Questions? <a href="/support">Contact support</a> or <a href="/faq">see the full FAQ</a>.
+  </p>
+</BaseLayout>
+
+<style>
+  details {
+    padding: 8px 12px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    border: 1px solid #eee;
+  }
+  details summary {
+    list-style: none;
+  }
+  details summary::-webkit-details-marker { display: none; }
+</style>

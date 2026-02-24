@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="How to Play Pinochle — Rules, Scoring & Strategy Guide"
+  description="Complete guide to Pinochle: rules, meld scoring chart, bidding strategy, and the difference between 4-hand and 3-hand Pinochle."
+  canonical="/learn"
+>
+  <h1 class="title">How to Play Pinochle</h1>
+
+  <nav class="learn-nav" aria-label="Jump to section">
+    <a href="#overview">Overview</a>
+    <a href="#deck">The Deck</a>
+    <a href="#4hand">4-Hand Rules</a>
+    <a href="#3hand">3-Hand Rules</a>
+    <a href="#meld">Meld Chart</a>
+    <a href="#scoring">Scoring</a>
+    <a href="#strategy">Strategy</a>
+  </nav>
+
+  <!-- Overview -->
+  <section id="overview">
+    <h2>What is Pinochle?</h2>
+    <p>Pinochle is a classic American trick-taking card game played with a 48-card deck (two copies of each card A, 10, K, Q, J, 9 in all four suits). It combines bidding, card combinations (meld), and trick-taking into one of the most strategic card games ever invented.</p>
+    <p>Pinochle is especially popular in the Midwest and among players who grew up in the mid-20th century. It rewards card memory, partnership communication, and strategic bidding.</p>
+    <div class="section" style="text-align:center;">
+      <p><strong>Ready to play?</strong> Pinochle Pro puts you at the table with Bob, Shirley, and Jed immediately.</p>
+      <a href="https://apps.apple.com/us/app/pinochle-pro/id567644839" target="_blank" rel="noopener">
+        <img class="download-badge" src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store" />
+      </a>
+    </div>
+  </section>
+
+  <!-- The Deck -->
+  <section id="deck">
+    <h2>The Pinochle Deck</h2>
+    <p>Single-deck Pinochle uses <strong>48 cards</strong>: two copies of each of the six ranks (Ace, 10, King, Queen, Jack, 9) in each of the four suits (♠ ♥ ♦ ♣).</p>
+    <p><strong>Card rank in tricks (high to low):</strong> A &gt; 10 &gt; K &gt; Q &gt; J &gt; 9</p>
+    <p><strong>Counter points</strong> (cards worth points when captured in tricks): only Aces and Tens count — 1 point each. With 8 Aces and 8 Tens, there are 16 counter points + 2 points for last trick = <strong>18 total trick points per hand</strong> in 4-hand Pinochle.</p>
+  </section>
+
+  <!-- 4-Hand Rules -->
+  <section id="4hand">
+    <h2>4-Hand Pinochle</h2>
+    <p>4-Hand is partnership Pinochle — two teams of two players, partners sitting across from each other. The most common form of the game.</p>
+
+    <h3>Phase 1: Bidding</h3>
+    <p>Starting with the player to the dealer's left, each player bids or passes. The minimum bid is typically 20 or 25. Players bid to win the right to name the trump suit — but the bid winner's team must score at least that many points (meld + tricks) or go "set" (score negative points equal to the bid).</p>
+
+    <h3>Phase 2: Card Passing</h3>
+    <p>The bid winner names trump. Partners pass each other 3 cards (configurable: 0, 3, or 4). This is the communication phase — you can signal your strength in a suit through which cards you pass.</p>
+
+    <h3>Phase 3: Meld</h3>
+    <p>All players show their card combinations (meld) face-up for points. See the <a href="#meld">meld chart</a> below. Only the bid winner's team scores meld if they make their bid; the opposing team always scores meld.</p>
+
+    <h3>Phase 4: Trick-Taking</h3>
+    <p>The bid winner leads the first trick. Players must follow suit if possible; must trump if they can't follow suit. The highest card of the led suit (or highest trump) wins the trick. Each Ace and Ten captured is worth 1 counter point; last trick is worth 2 bonus points.</p>
+
+    <h3>Making or Setting the Bid</h3>
+    <p>After all tricks: if the bid winner's team's total (meld + counters + last trick bonus) meets or exceeds the bid, they score that total. If they fall short, they "go set" — the bid is subtracted from their score. The other team always scores their meld + counters.</p>
+  </section>
+
+  <!-- 3-Hand Rules -->
+  <section id="3hand">
+    <h2>3-Hand Pinochle</h2>
+    <p>3-Hand is solo Pinochle — no partners. Each player plays for themselves against the other two. A 3-card <strong>kitty</strong> is dealt face-down; the bid winner claims it and adds it to their hand before declaring trump and discarding 3 cards.</p>
+
+    <h3>Key Differences from 4-Hand</h3>
+    <ul>
+      <li>No partner — the bid winner plays solo against both opponents</li>
+      <li>Kitty: 3 hidden cards the bid winner can take</li>
+      <li>Discard: bid winner discards 3 cards face-down (those cards count as captured counters for the bid winner)</li>
+      <li>Scoring: each player scores individually; higher target scores (typically 250)</li>
+    </ul>
+  </section>
+
+  <!-- Meld Chart -->
+  <section id="meld">
+    <h2>Meld Scoring Chart</h2>
+    <p>Meld is scored before trick-taking. You can score multiple meld combinations from the same hand.</p>
+
+    <table class="meld-table">
+      <thead>
+        <tr><th>Combination</th><th>Cards Required</th><th>Points</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Run (Flush)</strong></td><td>A-10-K-Q-J of trump suit</td><td>15</td></tr>
+        <tr><td><strong>Double Run</strong></td><td>Two A-10-K-Q-J of trump suit</td><td>150</td></tr>
+        <tr><td><strong>Royal Marriage (Trump)</strong></td><td>K-Q of trump suit</td><td>4</td></tr>
+        <tr><td><strong>Marriage (non-trump)</strong></td><td>K-Q of any non-trump suit</td><td>2</td></tr>
+        <tr><td><strong>Pinochle</strong></td><td>J♦ + Q♠</td><td>4</td></tr>
+        <tr><td><strong>Double Pinochle</strong></td><td>J♦J♦ + Q♠Q♠</td><td>30</td></tr>
+        <tr><td><strong>Aces Around</strong></td><td>One Ace of each suit</td><td>10</td></tr>
+        <tr><td><strong>Double Aces Around</strong></td><td>Two Aces of each suit</td><td>100</td></tr>
+        <tr><td><strong>Kings Around</strong></td><td>One King of each suit</td><td>8</td></tr>
+        <tr><td><strong>Double Kings Around</strong></td><td>Two Kings of each suit</td><td>80</td></tr>
+        <tr><td><strong>Queens Around</strong></td><td>One Queen of each suit</td><td>6</td></tr>
+        <tr><td><strong>Double Queens Around</strong></td><td>Two Queens of each suit</td><td>60</td></tr>
+        <tr><td><strong>Jacks Around</strong></td><td>One Jack of each suit</td><td>4</td></tr>
+        <tr><td><strong>Double Jacks Around</strong></td><td>Two Jacks of each suit</td><td>40</td></tr>
+        <tr><td><strong>9 of Trump (Dix)</strong></td><td>9 of trump suit</td><td>1</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>Note:</strong> Cards in a Run can also count for Royal Marriage and other combinations in the same hand. A Run automatically includes the Royal Marriage; you don't score both separately.</p>
+  </section>
+
+  <!-- Scoring -->
+  <section id="scoring">
+    <h2>Scoring Summary</h2>
+    <ul>
+      <li><strong>Meld points:</strong> From combinations shown before tricks (see chart above)</li>
+      <li><strong>Counter points:</strong> Aces and Tens captured in tricks (1 point each, 16 total per hand)</li>
+      <li><strong>Last trick bonus:</strong> 2 points for winning the final trick</li>
+      <li><strong>Going set:</strong> Bid winner's team subtracts the bid from their score if they don't make it</li>
+      <li><strong>Game target:</strong> First team/player to reach 150 (4-hand) or 250 (3-hand) wins</li>
+    </ul>
+  </section>
+
+  <!-- Strategy -->
+  <section id="strategy">
+    <h2>Basic Strategy</h2>
+
+    <h3>Bidding</h3>
+    <p>Count your meld first. Then estimate how many counter points you can capture in tricks — count your Aces (guaranteed winners) and "sure thing" high cards. Add meld + expected counters + last trick potential. That's your maximum safe bid. Overbidding is the most common mistake.</p>
+
+    <h3>Trump Selection</h3>
+    <p>Prefer a trump suit where you have a <strong>run</strong> (A-10-K-Q-J) — the 15 meld points plus the trick-taking power of five trumps is the strongest combination in Pinochle. Avoid making a suit trump where you hold only low cards.</p>
+
+    <h3>Card Passing (4-Hand)</h3>
+    <p>Pass cards that help your partner's likely trump suit. If you have strength in a suit your partner might trump, pass your high cards in that suit. Pass Aces if you can spare them — they score points when captured.</p>
+
+    <h3>Trick Play</h3>
+    <p>Lead trump early to draw out opponents' trump cards. Play counters (Aces and Tens) where they're likely to win. Never let the last trick slip — it's worth 2 points and can decide a close hand.</p>
+
+    <p style="margin-top:24px; text-align:center; color:#666;">
+      <a href="https://apps.apple.com/us/app/pinochle-pro/id567644839" target="_blank" rel="noopener" class="pricing-cta">Practice with Pinochle Pro →</a>
+    </p>
+  </section>
+</BaseLayout>

@@ -1,0 +1,44 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical: string;
+}
+
+const GA_ID = 'G-NQ813JV3VH';
+const { title, description = 'The classic Pinochle card game — play against Bob, Shirley, and Jed. Advanced AI opponents, deep customization, and a lifetime of Pinochle.', canonical } = Astro.props;
+const canonicalURL = `https://pinochlepro.com${canonical}`;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href={canonicalURL} />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <!-- Google tag (gtag.js) -->
+  <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+  <script define:vars={{ GA_ID }}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  </script>
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/history">Our Story</a>
+      <a href="/learn">Learn</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/faq">FAQ</a>
+      <a href="/support">Support</a>
+    </nav>
+    <slot />
+  </div>
+</body>
+</html>
