@@ -30,11 +30,6 @@
         "answer": "Web subscribers can manage through the <a href='https://billing.revenuecat.com/portal' target='_blank' rel='noopener'>subscription portal</a>. iOS subscribers can manage through <strong>Settings → Apple ID → Subscriptions</strong> on your iPhone or iPad."
     },
     {
-        "id": "subscription_lifetime",
-        "question": "What is the Lifetime purchase option?",
-        "answer": "The Lifetime option is a one-time payment ($29.99) that grants all subscriber features forever — including all future subscriber features we add. No recurring charge, ever. Great for players who prefer to own rather than subscribe."
-    },
-    {
         "id": "why_change_pinochlepro",
         "question": "Why are you changing the game? I like how it was before.",
         "answer": "Change can be challenging. Many of you have logged thousands of hours into the game and I understand the attachment to Pinochle Pro. We're updating the game to address long-standing issues and prepare for exciting new features, such as additional animated characters, smarter opponents, improved graphics, and online multiplayer. These changes are driven by a desire for meaningful improvement, not change for the sake of change. Your feedback is crucial in shaping these changes. Visit our <a href='https://pinochle-pro.canny.io/' target='_blank'>feedback site</a> to suggest and vote on features you'd like to see. Thank you for your understanding and support."

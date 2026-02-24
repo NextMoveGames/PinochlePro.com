@@ -19,6 +19,18 @@ const canonicalURL = `https://pinochlepro.com${canonical}`;
   <link rel="canonical" href={canonicalURL} />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content="https://pinochlepro.com/gameplay_image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="https://pinochlepro.com/gameplay_image.png" />
   <!-- Google tag (gtag.js) -->
   <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
   <script define:vars={{ GA_ID }}>
@@ -30,15 +42,18 @@ const canonicalURL = `https://pinochlepro.com${canonical}`;
 </head>
 <body>
   <div class="container">
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
       <a href="/">Home</a>
       <a href="/history">Our Story</a>
       <a href="/learn">Learn</a>
       <a href="/pricing">Pricing</a>
       <a href="/faq">FAQ</a>
       <a href="/support">Support</a>
+      <a href="/contact">Contact</a>
     </nav>
-    <slot />
+    <main>
+      <slot />
+    </main>
   </div>
 </body>
 </html>
