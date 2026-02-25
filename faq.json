@@ -2,37 +2,12 @@
     {
         "id": "history",
         "question": "Where did these characters come from?",
-        "answer": "They <a href='/history'>were inspired by</a> playing with my wife's grandparents Bob and Shirley. They were so fun, witty, and sarcastic that I decided to memorialize them in this game."
-    },
-    {
-        "id": "subscription_what",
-        "question": "What does a Pinochle Pro subscription include?",
-        "answer": "A subscription unlocks: <ul><li>Ad-free play</li><li>Card backs and table themes</li><li>AI personalities for each opponent</li><li>Hints system (so you can learn from the AI)</li><li>Detailed statistics dashboard</li><li>Post-hand analysis / replay</li><li>Web play (coming soon)</li></ul>The full game — all rules, all variants, all AI opponents — is always free."
-    },
-    {
-        "id": "subscription_both_apps",
-        "question": "Does one subscription cover both 4-hand and 3-hand Pinochle Pro?",
-        "answer": "Yes. One Pinochle Pro subscription covers both PinochlePro (4-hand) and PinochlePro 3-Hand. You will never need to pay twice for the same game."
-    },
-    {
-        "id": "subscription_existing_adfree",
-        "question": "I already bought the ad-free version. What happens to me?",
-        "answer": "Your ad-free access is honored permanently — that purchase is yours forever and we will never take it away. New subscriber features (card themes, AI personalities, hints, post-hand analysis, etc.) require a subscription, but your core ad-free experience is unchanged. Thank you for your early support."
-    },
-    {
-        "id": "subscription_web_to_ios",
-        "question": "I subscribed on the website. How do I activate it on my iPhone?",
-        "answer": "After subscribing on the web, you'll receive a <strong>Redemption Link</strong> by email. Just tap that link on your iPhone — it will open Pinochle Pro and automatically activate your subscription. No login or account needed."
-    },
-    {
-        "id": "subscription_manage",
-        "question": "How do I manage or cancel my subscription?",
-        "answer": "Web subscribers can manage through the <a href='https://billing.revenuecat.com/portal' target='_blank' rel='noopener'>subscription portal</a>. iOS subscribers can manage through <strong>Settings → Apple ID → Subscriptions</strong> on your iPhone or iPad."
+        "answer": "They <a href='history.html'>were inspired by</a> playing with my wife's grandparents Bob and Shirley. They were so fun, witty, and sarcastic that I decided to memorialize them in this game."
     },
     {
         "id": "why_change_pinochlepro",
         "question": "Why are you changing the game? I like how it was before.",
-        "answer": "Change can be challenging. Many of you have logged thousands of hours into the game and I understand the attachment to Pinochle Pro. We're updating the game to address long-standing issues and prepare for exciting new features, such as additional animated characters, smarter opponents, improved graphics, and online multiplayer. These changes are driven by a desire for meaningful improvement, not change for the sake of change. Your feedback is crucial in shaping these changes. Visit our <a href='https://pinochle-pro.canny.io/' target='_blank'>feedback site</a> to suggest and vote on features you'd like to see. Thank you for your understanding and support."
+        "answer": "Change can be challenging. Many of you have logged thousands of hours into the game and I understand the attachment to Pinochle Pro. We're updating the game to address long-standing issues and prepare for exciting new features, such as additional animated characters, smarter opponents, and improved graphics. These changes are driven by a desire for meaningful improvement, not change for the sake of change. Your feedback is crucial in shaping these changes. Visit our <a href='https://pinochle-pro.canny.io/' target='_blank'>feedback site</a> to suggest and vote on features you'd like to see. Thank you for your understanding and support. 🙏"
     },
     {
         "id": "same_hand",
@@ -47,11 +22,11 @@
     {
         "id": "thanks",
         "question": "Is there anything I can do to say thanks for the game?",
-        "answer": "<a href='https://apps.apple.com/us/app/pinochle-pro/id567644839?action=write-review' target='_blank'>Leaving a 5-star review</a> on the App Store not only shows your appreciation but also helps us reach more players! Higher reviews allow me to focus on adding new features and improvements to the game."
+        "answer": "<a href='https://apps.apple.com/us/app/pinochle-pro/id567644839?action=write-review' target='_blank'>Leaving a 5-star review</a> on the App Store not only shows your appreciation but also helps us reach more players! Higher reviews lead allows me to focus on adding new features and improvements to the game."
     },
     {
         "id": "bidding_strategy",
-        "question": "Is there a way to make my partner and opponents bid less aggressively?",
-        "answer": "Pinochle Pro's bidding logic is modeled after how humans bid. Not knowing what its partner will pass, each player assesses how strong the hand is and considers the possibility that its partner may or may not pass the card(s) needed. Because Pinochle Pro players never cheat (by looking at other players' hands) and the randomness of shuffled cards, players will sometimes bid too high and go set!<br/><br/>If you consistently find your partner or opponents bidding too high or low, you can influence their behavior using the bidding aggressiveness settings in the game options:<br/><ul><li><b>Conservative:</b> The AI bids with approximately 85% accuracy, assuming receiving a single-card hit from their partner</li><li><b>Aggressive:</b> The AI bids higher, maintaining approximately 70% accuracy, assuming receiving a single-card hit from their partner</li></ul>"
+        "question": "Is there a way to make by partner and opponents bid less aggressively?",
+        "answer": "Pinochle Pro's bidding logic is modeled after how humans bid. Not knowing what it's partner will pass, players assesses how strong the hand is and considers the possibility that its partner may or may not pass the card(s) needed. Because Pinochle Pro players never cheat (by looking at other player’s hands) and the randomness of shuffled cards, players will bid too high and will go set!<br/><br/>If you consistently find your partner or opponents bidding too high or low, you can influence their behavior using the bidding aggressiveness settings in the game options<br/><ul><li><b>Conservative:</b> The AI bids with approximately 85% accuracy, assuming receiving a single-card hit from their partner</li><li><b>Aggressive:</b> The AI bids higher, maintaining approximately 70% accuracy, assuming receiving a single-card hit from their partner</li></ul>"
     }
 ]
