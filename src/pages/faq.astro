@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import faqData from '../../faq.json';
+---
+<BaseLayout
+  title="FAQ — Pinochle Pro"
+  description="Frequently asked questions about Pinochle Pro — subscriptions, gameplay, characters, and more."
+  canonical="/faq"
+>
+  <h1 class="title">Frequently Asked Questions</h1>
+
+  {faqData.map((item: { id: string; question: string; answer: string }) => (
+    <div class="faq-item" id={item.id}>
+      <details>
+        <summary class="faq-question">{item.question}</summary>
+        <div class="faq-answer" set:html={item.answer} />
+      </details>
+    </div>
+  ))}
+</BaseLayout>
+
+<style>
+  .faq-item {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 16px;
+    padding: 8px 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.06);
+  }
+
+  details summary {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    list-style: none;
+    padding: 4px 0;
+  }
+
+  details summary::-webkit-details-marker { display: none; }
+  details summary::marker { display: none; }
+
+  details summary::after {
+    content: ' ▶';
+    font-size: 0.75rem;
+    color: #888;
+  }
+
+  details[open] summary::after {
+    content: ' ▼';
+  }
+
+  .faq-answer {
+    padding: 12px 0 4px;
+    line-height: 1.6;
+  }
+</style>
+
+<script>
+  // Open item matching URL hash on page load
+  const hash = window.location.hash;
+  if (hash) {
+    const el = document.querySelector(hash);
+    if (el) {
+      const details = el.querySelector('details');
+      if (details) details.open = true;
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+</script>
