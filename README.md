@@ -2,6 +2,16 @@
 
 Website for [pinochlepro.com](https://pinochlepro.com), built with [Astro 5](https://astro.build).
 
+## Why Astro?
+
+The site was originally five raw HTML files with copy-pasted nav, GA4 snippet, and CSS in every file. Astro was chosen to solve that without adding unnecessary complexity:
+
+- **Shared layouts** — nav, analytics, and meta tags live once in `BaseLayout.astro`, not in every page
+- **Zero JS by default** — Astro ships pure static HTML/CSS; no client-side framework overhead for a marketing site
+- **Static output** — builds to a `dist/` folder that deploys directly to GitHub Pages, no server required
+- **Content-first** — designed for marketing and content sites, not SPAs; pages are `.astro` files that look like HTML with a frontmatter header
+- **Future flexibility** — supports React/Vue/Svelte islands if interactive components are ever needed
+
 ## Prerequisites
 
 - Node.js 20+
