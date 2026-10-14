@@ -1,65 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<link rel="canonical" href="https://pinochlepro.com/" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pinochle Pro - Home</title>
-<link rel="stylesheet" href="styles.css">
-<style>
-    .video-container {
-        position: relative;
-        width: 100%;
-        height: 0;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    }
-    .video-container video {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fefcf8">
+  <meta name="description" content="Play Pinochle Pro on iPhone and iPad. Sit down with computer opponents, learn the rules, and hear the table talk.">
+  <link rel="canonical" href="https://pinochlepro.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pinochle Pro">
+  <meta property="og:title" content="Pinochle Pro | Play Pinochle on iPhone and iPad">
+  <meta property="og:description" content="Play Pinochle with computer opponents who have something to say.">
+  <meta property="og:url" content="https://pinochlepro.com/">
+  <meta property="og:image" content="https://pinochlepro.com/assets/gameplay-poster.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pinochle Pro | Play Pinochle on iPhone and iPad">
+  <meta name="twitter:description" content="Play Pinochle with computer opponents who have something to say.">
+  <meta name="twitter:image" content="https://pinochlepro.com/assets/gameplay-poster.jpg">
+  <title>Pinochle Pro | Play Pinochle on iPhone and iPad</title>
+  <link rel="stylesheet" href="styles.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ813JV3VH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NQ813JV3VH');
+  </script>
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://pinochlepro.com/#website","url":"https://pinochlepro.com/","name":"Pinochle Pro","publisher":{"@id":"https://pinochlepro.com/#organization"}},{"@type":"Organization","@id":"https://pinochlepro.com/#organization","name":"Next Move Games","url":"https://pinochlepro.com/"}]}
+  </script>
+  <script src="site.js" defer></script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ813JV3VH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-NQ813JV3VH');
-</script>
 <body>
-<div class="container">
-    <div class="nav">
-        <a href="./">Home</a>
-        <a href="./history">History</a>
-        <a href="./support">Support</a>
-        <a href="./faq">FAQ</a>
-        <a href="./contact">Contact</a>
-    </div>
-    <h1 class="title">Welcome to Pinochle Pro</h1>
-    <!-- Placeholder Image -->
-    <!--<img class="video-placeholder" src="placeholder.jpg" alt="Video Placeholder">-->
-    <!-- Actual Video with Lazy Loading -->
-    <div class="video-container">
-        <video autoplay loop muted preload="none">
-            <source src="gameplay-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <div class="features-section">
-        <h2>Why Choose Pinochle Pro?</h2>
-        <ul>
-            <li><strong>Immersive Gameplay:</strong> Dive into the world of classic Pinochle with our captivating card game that combines strategic gameplay with whimsical characters.</li>
-            <li><strong>Advanced AI Opponents:</strong> Challenge yourself against top-notch AI opponents, each designed to provide a challenging and realistic gameplay experience.</li>
-            <li><strong>Customizable Settings:</strong> Tailor your Pinochle experience with customizable difficulty levels, preferred rules, and game variations.</li>
-            <li><strong>Engaging Rewards:</strong> Earn rewards and unlock achievements as you progress through the game, adding an extra layer of motivation to your Pinochle journey.</li>
-            <li><strong>Detailed Statistics:</strong> Track your progress and analyze your gameplay with detailed statistics. Monitor your win-loss record, study your strategies, and become a Pinochle master.</li>
-        </ul>
-        <p>Download now and immerse yourself in the ultimate Pinochle card game experience. The cards are dealt, Bob and Shirley are ready – are you?</p>
-    </div>
-    <a href="https://apps.apple.com/us/app/pinochle-pro/id567644839" target="_blank"><img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Available on the App Store"></a>
-</div>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header wrap">
+    <a class="wordmark" href="index.html" aria-label="Pinochle Pro home">Pinochle<span>Pro</span><span class="brand-dot" aria-hidden="true"></span></a>
+    <nav aria-label="Main navigation"><a href="rules.html">Rules</a><a href="history.html">Our story</a><a href="support.html">Help</a></nav>
+  </header>
+  <main id="main">
+    <section class="home-hero wrap">
+      <div class="hero-copy">
+        <h1>Your next hand of <em>Pinochle.</em></h1>
+        <p>Play Pinochle with computer opponents who have something to say.</p>
+        <a class="button" href="https://apps.apple.com/us/app/pinochle-pro/id567644839">Play Pinochle <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+        <span class="availability">For iPhone &amp; iPad</span>
+      </div>
+      <figure class="game-film">
+        <div class="film-image"><video id="game-video" muted playsinline loop preload="metadata" poster="assets/gameplay-poster.jpg" controls aria-label="Recorded Pinochle Pro gameplay from an update in development"><source src="assets/gameplay.mp4" type="video/mp4"></video></div>
+        <figcaption><strong>New characters coming November 2026</strong><button class="video-toggle" hidden type="button" aria-controls="game-video">Watch video</button></figcaption>
+      </figure>
+    </section>
+    <section class="table-story">
+      <div class="wrap story-teaser">
+        <div><h2>It started around<br>a family table.</h2><p>Bob had an opinion about every hand. Shirley had a few of her own. Their table talk became Pinochle Pro.</p><a class="text-link" href="history.html">Meet the family behind the game <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div>
+        <figure><img src="assets/bob-and-shirley.jpg" width="2736" height="3648" alt="Bob and Shirley Bearce outside together" loading="lazy"><figcaption>Bob &amp; Shirley · 2009</figcaption></figure>
+      </div>
+    </section>
+    <section class="help-strip wrap"><div><h2>Need a hand?</h2><p>Get help with your game.</p></div><a class="button" href="support.html">Get Help <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></section>
+  </main>
+  <footer class="footer wrap">
+    <a class="wordmark small" href="index.html">Pinochle<span>Pro</span></a>
+    <p>By Next Move Games</p>
+    <nav aria-label="Footer"><a href="rules.html">Rules</a><a href="support.html">Help</a></nav>
+  </footer>
 </body>
 </html>

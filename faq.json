@@ -7,7 +7,7 @@
     {
         "id": "why_change_pinochlepro",
         "question": "Why are you changing the game? I like how it was before.",
-        "answer": "Change can be challenging. Many of you have logged thousands of hours into the game and I understand the attachment to Pinochle Pro. We're updating the game to address long-standing issues and prepare for exciting new features, such as additional animated characters, smarter opponents, and improved graphics. These changes are driven by a desire for meaningful improvement, not change for the sake of change. Your feedback is crucial in shaping these changes. Visit our <a href='https://pinochle-pro.canny.io/' target='_blank'>feedback site</a> to suggest and vote on features you'd like to see. Thank you for your understanding and support. 🙏"
+        "answer": "Change can be challenging. Many of you have logged thousands of hours into the game and I understand the attachment to Pinochle Pro. We update the game to address long-standing issues and prepare for new characters, smarter opponents, and improved graphics. If you have feedback, email <a href='mailto:support@nextmove.games'>support@nextmove.games</a>."
     },
     {
         "id": "same_hand",
@@ -17,7 +17,7 @@
     {
         "id": "feature_request",
         "question": "Why don't you support _______ feature?",
-        "answer": "I may not know about it. If you ask nicely, I may just add it! Please submit your idea through the <a href='https://pinochle-pro.canny.io/' target='_blank'>feedback site</a>."
+        "answer": "Email your idea to <a href='mailto:support@nextmove.games'>support@nextmove.games</a>."
     },
     {
         "id": "thanks",

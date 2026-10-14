@@ -1,123 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <link rel="canonical" href="https://pinochlepro.com/faq" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinochle Pro - FAQ</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* CSS styles */
-        .faq-item {
-            border-bottom: 1px solid #ccc;
-            margin-bottom: 20px;
-            padding: 10px 10px 10px 10px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .faq-item h3 {
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-
-        .faq-question {
-            font-size: 16px; /* Reduced font size */
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-        }
-
-        .faq-question a {
-            text-decoration: none;
-            color:black;
-        }
-
-        .faq-answer {
-            display: none;
-        }
-
-        .faq-answer-show {
-            display: block;
-        }
-
-        .faq-expand-icon {
-            margin-left: auto; /* Pushes it to the right */
-            transition: transform 0.3s; /* Smooth animation */
-            width: 0;
-            height: 0;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-top: 8px solid #333;
-            transform: rotate(90deg); /* Initially rotated */
-        }
-
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url=support.html">
+  <link rel="canonical" href="https://pinochlepro.com/support">
+  <meta name="robots" content="noindex,follow">
+  <title>Help | Pinochle Pro</title>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ813JV3VH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-NQ813JV3VH');
-</script>
-<script>
-    fetch('faq.json')
-    .then(response => response.json())
-    .then(data => {
-        const container = document.querySelector('.container');
-
-        data.forEach(item => {
-            const faqItem = document.createElement('div');
-            faqItem.classList.add('faq-item');
-            faqItem.setAttribute('id', item.id);
-
-            const question = document.createElement('h3');
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                answer.classList.toggle('faq-answer-show');
-            });
-            question.classList.add('faq-question');
-            question.innerHTML = `<a href="#${item.id}">${item.question}</a>`;
-
-            const answer = document.createElement('div');
-            answer.classList.add('faq-answer', 'faq-answer-hide');
-            answer.innerHTML = item.answer;
-
-            faqItem.appendChild(question);
-            faqItem.appendChild(answer);
-
-            container.appendChild(faqItem);
-        });
-
-        // Call function to show answer corresponding to anchor when the page loads
-        showAnchorAnswer();
-    })
-    .catch(error => console.error('Error fetching FAQ data:', error));
-
-
-    // Function to check if URL contains an anchor and show corresponding FAQ answer
-    function showAnchorAnswer() {
-        const anchor = window.location.hash;
-        const faqItem = anchor ? document.querySelector(anchor) : document.querySelector('#history');
-        if (faqItem) {
-            faqItem.querySelector('.faq-answer').classList.add('faq-answer-show');
-        }
-    }
-</script>
 <body>
-    <div class="container">
-        <div class="nav">
-            <a href="./">Home</a>
-            <a href="./history">History</a>
-            <a href="./support">Support</a>
-            <a href="./faq">FAQ</a>
-            <a href="./contact">Contact</a>
-        </div>
-        <h1 class="title">Frequently Asked Questions</h1>
-    </div>
+  <p>Go to <a href="support.html">Pinochle Pro Help</a>.</p>
 </body>
 </html>
