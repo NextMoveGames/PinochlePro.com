@@ -1,3 +1,14 @@
+document.querySelectorAll('[data-analytics-event]').forEach((link) => {
+  link.addEventListener('click', () => {
+    if (typeof window.gtag !== 'function') return;
+
+    window.gtag('event', link.dataset.analyticsEvent, {
+      link_label: link.dataset.analyticsLabel,
+      page_path: window.location.pathname
+    });
+  });
+});
+
 const video = document.querySelector('#game-video');
 const button = document.querySelector('.video-toggle');
 if (video && button) {
