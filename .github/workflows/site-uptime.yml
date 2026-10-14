@@ -1,0 +1,135 @@
+name: Monitor site availability
+
+on:
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: pinochlepro-site-uptime
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      SITE_URL: https://pinochlepro.com/
+      ALERT_LABEL: site-uptime
+    steps:
+      - name: Check the public site
+        id: probe
+        shell: bash
+        run: |
+          set +e
+          http_code="$(curl --location --silent --show-error --output /dev/null --write-out '%{http_code}' --connect-timeout 10 --max-time 20 --retry 2 --retry-all-errors "$SITE_URL")"
+          curl_exit="$?"
+          set -e
+
+          if [[ "$curl_exit" -eq 0 && "$http_code" =~ ^[23][0-9]{2}$ ]]; then
+            echo "state=up" >> "$GITHUB_OUTPUT"
+            echo "http_code=$http_code" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "state=down" >> "$GITHUB_OUTPUT"
+          echo "http_code=$http_code" >> "$GITHUB_OUTPUT"
+          echo "curl_exit=$curl_exit" >> "$GITHUB_OUTPUT"
+
+      - name: Open an outage alert
+        if: steps.probe.outputs.state == 'down'
+        uses: actions/github-script@v7
+        env:
+          HTTP_CODE: ${{ steps.probe.outputs.http_code }}
+          CURL_EXIT: ${{ steps.probe.outputs.curl_exit }}
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const label = process.env.ALERT_LABEL;
+            try {
+              await github.rest.issues.getLabel({ owner, repo, name: label });
+            } catch (error) {
+              if (error.status !== 404) throw error;
+              await github.rest.issues.createLabel({
+                owner,
+                repo,
+                name: label,
+                color: 'B91C1C',
+                description: 'Automated public-site availability alerts'
+              });
+            }
+
+            const { data: openIssues } = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: 'open',
+              labels: label,
+              per_page: 100
+            });
+            const existing = openIssues.find(issue => !issue.pull_request);
+            if (existing) {
+              core.notice(`Outage alert already open: #${existing.number}`);
+              return;
+            }
+
+            await github.rest.issues.create({
+              owner,
+              repo,
+              title: 'Site availability alert: pinochlepro.com is unreachable',
+              assignees: ['travisbader'],
+              labels: [label],
+              body: [
+                'The scheduled public-site check could not reach https://pinochlepro.com/.',
+                '',
+                `- Checked at: ${new Date().toISOString()}`,
+                `- HTTP code: ${process.env.HTTP_CODE || 'none'}`,
+                `- curl exit code: ${process.env.CURL_EXIT || 'unknown'}`,
+                '',
+                'This alert stays open until a later check succeeds.'
+              ].join('\n')
+            });
+
+      - name: Close a recovered outage alert
+        if: steps.probe.outputs.state == 'up'
+        uses: actions/github-script@v7
+        env:
+          HTTP_CODE: ${{ steps.probe.outputs.http_code }}
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const label = process.env.ALERT_LABEL;
+            const { data: openIssues } = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: 'open',
+              labels: label,
+              per_page: 100
+            });
+            for (const issue of openIssues.filter(issue => !issue.pull_request)) {
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: issue.number,
+                body: [
+                  'The scheduled public-site check has recovered.',
+                  '',
+                  `- Checked at: ${new Date().toISOString()}`,
+                  `- HTTP code: ${process.env.HTTP_CODE}`
+                ].join('\n')
+              });
+              await github.rest.issues.update({
+                owner,
+                repo,
+                issue_number: issue.number,
+                state: 'closed'
+              });
+            }
+
+      - name: Mark failed availability checks
+        if: steps.probe.outputs.state == 'down'
+        run: |
+          echo "pinochlepro.com returned HTTP ${{ steps.probe.outputs.http_code }} (curl exit ${{ steps.probe.outputs.curl_exit }})."
+          exit 1
