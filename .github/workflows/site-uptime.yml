@@ -2,7 +2,7 @@ name: Monitor site availability
 
 on:
   schedule:
-    - cron: "7,22,37,52 * * * *"
+    - cron: "17 15 * * *"
   workflow_dispatch:
 
 permissions:
