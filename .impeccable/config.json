@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "next/index.html"
+        ],
+        "createdAt": "2026-10-27T23:00:57.683Z",
+        "reason": "PP-300: the private preview intentionally carries forward the existing PinochlePro.com cream paper palette as part of the incumbent visual identity."
+      }
+    ]
+  }
+}
